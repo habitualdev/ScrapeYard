@@ -2,10 +2,8 @@ import datetime
 import importlib
 import logging
 import threading
-import os
-import types
-
 import yaml
+import output.outputctl
 from yaml import CLoader as Loader, CDumper as Dumper
 
 
@@ -33,4 +31,13 @@ def run_modules(yaml_parsed):
         except:
             error_string = "Unable to load the module: " + mod
             logging.log(logging.ERROR, error_string)
+
+    try:
+        with open("outputctl" + ".lck", "w") as f:
+            f.write(datetime.datetime.now().strftime("%H:%M:%S"))
+        thread = threading.Thread(target=output.outputctl.__init__)
+        thread.start()
+    except:
+        error_string = "Unable to start the module: " + mod
+        logging.log(logging.ERROR, error_string)
 
