@@ -4,3 +4,15 @@ Modules:
   Ingest:
     - LiveMap
     - PowerOutage
+  Output:
+    - Splunk
+    - Elasticsearch
+Databases:
+  Redis:
+    Host: '127.0.0.1'
+    Port: '6379'
+    Credentials: 'username:password'
+  Mongodb:
+    Host: '127.0.0.1'
+    Port: '27019'
+    Credentials: 'username:password'
