@@ -10,7 +10,7 @@ def __init__():
         if n >= QueryTime:
             n = 0
             get_data()
-            time.sleep(1)
+        time.sleep(1)
         n += 1
         if not exists("ingest.LiveMap.lck"):
             break

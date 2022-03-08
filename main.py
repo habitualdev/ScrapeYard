@@ -12,7 +12,7 @@ def main():
 def run_loop():
     parsed_yaml = manager.config.get_config()
     manager.config.run_modules(parsed_yaml)
-    time.sleep(3)
+    time.sleep(parsed_yaml["Manager"]["UpdatePeriod"])
     files_in_directory = os.listdir(".")
     filtered_files = [file for file in files_in_directory if file.endswith(".lck")]
     for file in filtered_files:
