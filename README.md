@@ -5,10 +5,30 @@ and managing them with simple YAML configurations. Designed with simplicity in m
 that different endpoints may require different "craziness" in order to work. Modules may be as complex as
 needed without impact overall framework simplicity. 
 
+
+
+
 ## YAML breakdown
 
 ```
-
+Manager:
+  UpdatePeriod: 300     --- How often the YAML is re-read for configuration changes.
+Modules:
+  Ingest:               --- Modules (placed inside the "ingest" directory) that get run
+    - LiveMap
+    - PowerOutage
+  Output:               --- Modules (placed inside the "output" directory) that get run
+    - Splunk
+    - Elasticsearch
+Databases:              --- Database information. Redis and mongodb are both required.
+  Redis:
+    Host: '127.0.0.1'
+    Port: '6379'
+    Credentials: 'username:password'
+  Mongodb:
+    Host: '127.0.0.1'
+    Port: '27019'
+    Credentials: 'username:password'
 ```
 
 
