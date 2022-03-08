@@ -1,0 +1,6 @@
+Manager:
+  UpdatePeriod: 300
+Modules:
+  Ingest:
+    - LiveMap
+    - PowerOutage
