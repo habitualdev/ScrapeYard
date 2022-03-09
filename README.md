@@ -5,8 +5,23 @@ and managing them with simple YAML configurations. Designed with simplicity in m
 that different endpoints may require different "craziness" in order to work. Modules may be as complex as
 needed without impact overall framework simplicity. 
 
+## Database Schema
 
+Scrapeyard relies on Redis and MongoDB for queueing and local retention of all data.
+Redis provides a message queue for the ingest modules, allowing for easier pipelining of outputs.
+MongoDB provides a document based store for all messages that pass through the pipeline. 
 
+Scrapeyard relies on the local developer to properly schema the data coming out of the ingest modules,
+as all documents are created for each ingest module, and are written to a single "ScrapeYard" database.
+The required JSON schema is as follows:
+
+``` 
+{ "Module": "Example",
+  "Data": { "NESTED": "JSON", "DATA": "HERE" }, 
+  }
+```
+
+This ensures each ingest module has its own MongoDB collection, for ease of later querying and add-ons. 
 
 ## YAML breakdown
 
@@ -33,6 +48,8 @@ Databases:              --- Database information. Redis and mongodb are both req
 
 
 ## Minimum required code for a module
+
+Note: This is minimum required for a module to RUN. The provided example does not interact with the redis stack.
 ```
 import time
 from os.path import exists

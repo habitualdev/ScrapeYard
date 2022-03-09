@@ -16,7 +16,7 @@ def __init__():
             get_data(parsed_yaml)
         time.sleep(1)
         n += 1
-        if not exists("ingest.example.lck"):
+        if not exists("ingest.Example.lck"):
             break
 
 
@@ -30,9 +30,9 @@ def get_data(parsed_yaml):
     try:
         r.rpush("data", data)
     except:
-        print("LiveMap : Unable to push to Redis stack")
+        print("Example : Unable to push to Redis stack")
 
 
 def retrieve_data():
-    data = '{"name":"John", "age":30, "car":null}'
+    data = '{"Module":"Example", "Data": {"name":"John", "age":30, "car":"civic"}}'
     return data

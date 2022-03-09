@@ -34,8 +34,8 @@ def __init__():
         else:
             ### SEND DATA TO MONGODB ###
             m = MongoClient(port=mongo_port)
-            mdb = m.data
-            mdb.ScrapeYard.insert_one(json.loads(json_data))
+            mdb = m["ScrapeYard"][json.loads(json_data)["Module"]]
+            mdb.insert_one(json.loads(json_data)["Data"])
 
             ### SEND TO ENDPOINTS ###
             for mod in parsed_yaml["Modules"]["Output"]:
