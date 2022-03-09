@@ -3,19 +3,16 @@ services:
   mongodb:
     image: mongo:latest
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 1qaz2wsx!QAZ@WSX
     ports:
       - '27017:27017'
     volumes:
-      - ./data:/data/db
+      - ./data/mongodb:/data/db
 
   redis:
     image: redis:6.2-alpine
     restart: always
     ports:
       - '6379:6379'
-    command: redis-server --save 20 1 --loglevel warning --requirepass 1qaz2wsx!QAZ@WSX
+    command: redis-server --save 20 1 --loglevel warning
     volumes:
-      - ./data:/data
+      - ./data/redis:/data

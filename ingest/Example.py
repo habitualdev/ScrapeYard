@@ -16,18 +16,15 @@ def __init__():
             get_data(parsed_yaml)
         time.sleep(1)
         n += 1
-        if not exists("ingest.LiveMap.lck"):
+        if not exists("ingest.example.lck"):
             break
 
 
 def get_data(parsed_yaml):
-    redis_creds = parsed_yaml['Databases']['Redis']['Credentials']
+
     redis_host = parsed_yaml['Databases']['Redis']['Host']
     redis_port = parsed_yaml['Databases']['Redis']['Port']
-    redis_username = str(redis_creds).split(":")[0]
-    redis_password = str(redis_creds).split(":")[1]
-
-    r = redis.Redis(host=redis_host, port=redis_port, password=redis_password, username=redis_username)
+    r = redis.Redis(host=redis_host, port=redis_port)
 
     data = retrieve_data()
     try:
@@ -37,5 +34,5 @@ def get_data(parsed_yaml):
 
 
 def retrieve_data():
-    data = " "
+    data = '{"name":"John", "age":30, "car":null}'
     return data

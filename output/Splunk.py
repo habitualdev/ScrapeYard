@@ -9,7 +9,12 @@ splunk_proto = 'http'
 splunk_source = "HEC_Example"
 
 
-def __init__(json_data):
+def __init__(*args):
+    rebuild_string = ""
+    for arg in args:
+        rebuild_string = rebuild_string + arg
+    print(rebuild_string)
+    return
     logger = logging.getLogger('HEC_Handler')
     logger.setLevel(logging.DEBUG)
     splunk_handler = SplunkHecHandler(splunk_host, splunk_token, port=splunk_port, proto=splunk_proto,source=splunk_source)

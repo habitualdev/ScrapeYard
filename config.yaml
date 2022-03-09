@@ -2,17 +2,14 @@ Manager:
   UpdatePeriod: 300
 Modules:
   Ingest:
-    - LiveMap
-    - PowerOutage
+    - Example
   Output:
     - Splunk
-#    - Elasticsearch
+#    - Elasticsearch - Not yet implemented
 Databases:
   Redis:
     Host: '127.0.0.1'
     Port: '6379'
-    Credentials: 'username:password'
   Mongodb:
     Host: '127.0.0.1'
-    Port: '27019'
-    Credentials: 'username:password'
+    Port: 27017
