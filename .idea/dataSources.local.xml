@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-212.5712.39">
-    <data-source name="Scrapeyard" uuid="49912844-3f41-4b40-bc73-7fb16fb3a346">
-      <database-info product="Mongo DB" version="" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.13" dbms="UNKNOWN" exact-version="0" />
+    <data-source name="ScrapeYard" uuid="f4ea405f-b595-4e10-a90f-71fc8ecb1436">
+      <database-info product="Mongo DB" version="5.0.6" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.13" dbms="MONGO" exact-version="5.0.6" exact-driver-version="1.13" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" negative="1">
-            <node kind="schema" negative="1" />
-          </node>
+          <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

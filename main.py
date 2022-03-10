@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 import os
 import time
+
+import data.dockerctl
 import manager.config
 
 
 def main():
+    data.dockerctl.start_database()
     while True:
         run_loop()
 

@@ -3,7 +3,7 @@
 A modular framework for querying novel data endpoints, sending the data to either splunk or elasticsearch
 and managing them with simple YAML configurations. Designed with simplicity in mind, while keeping in mind 
 that different endpoints may require different "craziness" in order to work. Modules may be as complex as
-needed without impact overall framework simplicity. 
+needed without impact overall framework simplicity.
 
 ## Database Schema
 
@@ -22,6 +22,20 @@ The required JSON schema is as follows:
 ```
 
 This ensures each ingest module has its own MongoDB collection, for ease of later querying and add-ons. 
+
+## Testing
+
+Scrapeyard provides a module validator, located in the tests directory.
+
+Usage:
+
+``` > python module_test.py ingest.Example ```
+
+This will test the following:
+ - Redis accessability
+ - Existence of class "QueryClass"
+ - Proper loading of Redis database with data
+ - Is the data proper JSON
 
 ## YAML breakdown
 
@@ -49,36 +63,48 @@ Databases:              --- Database information. Redis and mongodb are both req
 
 ## Minimum required code for a module
 
-Note: This is minimum required for a module to RUN. The provided example does not interact with the redis stack.
+Note: This is minimum required for a module to RUN and properly load Redis. The below code is from the Example module, 
+which loads a single static JSON entry.
 ```
-import time
-from os.path import exists
+class QueryClass:
+    def __init__(self):
+        self.data = ""
+        self.QueryTime = 10
+        self.n = self.QueryTime
+        parsed_yaml = manager.config.get_config()
+        while True:
+            if self.n >= self.QueryTime:
+                self.n = 0
+                self.load_redis(parsed_yaml)
+            time.sleep(1)
+            self.n += 1
+            if not exists("ingest.Example.lck"):
+                break
 
-# Query Time - in seconds #
-QueryTime = 10
+    def load_redis(self, parsed_yaml):
+        redis_host = parsed_yaml['Databases']['Redis']['Host']
+        redis_port = parsed_yaml['Databases']['Redis']['Port']
+        r = redis.Redis(host=redis_host, port=redis_port)
+        self.retrieve_data()
+        try:
+            r.rpush("data", self.data)
+        except:
+            print("Example : Unable to push to Redis stack")
 
-def __init__():
-    n = QueryTime
-    while True:
-        if n >= QueryTime:
-            n = 0
-            get_data()
-        time.sleep(1)
-        n += 1
-        if not exists("ingest.MODULE_NAME.lck"):
-            break
-
-
-def get_data():
-    print("PO test")
+    def retrieve_data(self):
+        self.data = '{"Module":"Example", "Data": {"name":"John", "age":30, "car":"civic"}}'
 ```
 
 ## Sample Code Dissected:
- - ``` QueryTime = 10```
-   - The time in seconds between each loop
- - ```def __init__():```
+ - ``` class QueryClass: ```
+   - The class called by the ingest manager.
+ - ``` self.QueryTime = 10```
+   - The time in seconds between each loop.
+ - ```def __init__(self):```
    - The function that is called by the manager. Is required for the module to be properly called.
- - ``` n = QueryTime```
+ - ``` self.n = self.QueryTime```
    - Sets the counter to "QueryTime" in order to run once before reseting the counter to zero and starting the loop
  - ``` if not exists("ingest.MODULE_NAME.lck"): ```
    - Looks for the setting update file. If it does not exist, exit out of the module. 
+ - ``` def load_redis(self, parsed_yaml): ```
+   - Function to load redis with data.

@@ -13,7 +13,6 @@ def __init__(*args):
     rebuild_string = ""
     for arg in args:
         rebuild_string = rebuild_string + arg
-    print(rebuild_string)
     return
     logger = logging.getLogger('HEC_Handler')
     logger.setLevel(logging.DEBUG)

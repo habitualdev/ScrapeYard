@@ -23,7 +23,7 @@ def run_modules(yaml_parsed):
             try:
                 with open("ingest." + mod + ".lck", "w") as f:
                     f.write(datetime.datetime.now().strftime("%H:%M:%S"))
-                thread = threading.Thread(target=module.__init__)
+                thread = threading.Thread(target=module.QueryClass)
                 thread.start()
             except:
                 error_string = "Unable to start the module: " + mod
@@ -31,7 +31,6 @@ def run_modules(yaml_parsed):
         except:
             error_string = "Unable to load the module: " + mod
             logging.log(logging.ERROR, error_string)
-
     try:
         with open("outputctl" + ".lck", "w") as f:
             f.write(datetime.datetime.now().strftime("%H:%M:%S"))

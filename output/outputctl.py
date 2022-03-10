@@ -1,8 +1,6 @@
-import base64
 import json
 import os.path
 import time
-import urllib.parse
 import manager.config
 import importlib
 import threading
@@ -14,10 +12,8 @@ from pymongo import MongoClient
 
 def __init__():
     parsed_yaml = manager.config.get_config()
-
     redis_host = parsed_yaml['Databases']['Redis']['Host']
     redis_port = parsed_yaml['Databases']['Redis']['Port']
-
     mongo_host = parsed_yaml['Databases']['Mongodb']['Host']
     mongo_port = parsed_yaml['Databases']['Mongodb']['Port']
 
@@ -28,12 +24,11 @@ def __init__():
         r = redis.Redis(host=redis_host, port=redis_port)
         json_data = r.lpop("data")
         if json_data is None:
-            print("No data in redis.")
             time.sleep(1)
             r.close()
         else:
             ### SEND DATA TO MONGODB ###
-            m = MongoClient(port=mongo_port)
+            m = MongoClient(host=mongo_host, port=mongo_port)
             mdb = m["ScrapeYard"][json.loads(json_data)["Module"]]
             mdb.insert_one(json.loads(json_data)["Data"])
 
