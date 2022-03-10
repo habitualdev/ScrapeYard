@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/module_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dockerctl.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dockerctl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/Example.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/Example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/Splunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/output/Splunk.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/outputctl.py" beforeDir="false" afterPath="$PROJECT_DIR$/output/outputctl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +31,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mongo" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -51,7 +46,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Module Test">
+  <component name="RunManager" selected="Shell Script.DB Remove">
     <configuration name="Module Test" type="PythonConfigurationType" factoryName="Python">
       <module name="ScrapeYard" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,6 +91,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="DB Remove" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="sudo rm -rf data/mongodb/*.wt; sudo rm -rf data/mongodb/WiredTiger*; sudo rm -rf data/mongodb/storage.bson; sudo rm -rf data/mongodb/mongod.lock; sudo rm -rf data/mongodb/diagnostic.data; sudo rm -rf data/mongodb/journal; sudo rm -rf data/redis/dump.rdb; rm *.lck;" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="false" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Requirements Update" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="pip freeze &gt; requirements.txt" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -138,6 +148,7 @@
       <item itemvalue="Docker.docker-compose.yml.mongodb: Compose Deployment" />
       <item itemvalue="Python.Module Test" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Shell Script.DB Remove" />
       <item itemvalue="Shell Script.Requirements Update" />
     </list>
     <recent_temporary>
@@ -155,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646702754606</updated>
       <workItem from="1646702758302" duration="1694000" />
-      <workItem from="1646787531390" duration="23961000" />
+      <workItem from="1646787531390" duration="30241000" />
     </task>
     <servers />
   </component>
@@ -174,8 +185,11 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ScrapeYard$Module_Test.coverage" NAME="Module Test Coverage Results" MODIFIED="1646925730544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ScrapeYard$main.coverage" NAME="main Coverage Results" MODIFIED="1646922465886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ScrapeYard$Module_Test.coverage" NAME="Module Test Coverage Results" MODIFIED="1646942473395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ScrapeYard$main.coverage" NAME="main Coverage Results" MODIFIED="1646944709426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

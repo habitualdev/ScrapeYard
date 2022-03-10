@@ -37,6 +37,11 @@ This will test the following:
  - Proper loading of Redis database with data
  - Is the data proper JSON
 
+Important note - As ingest modules are generally designed to persistently run in their own thread,
+the module unit test starts a new thread, waits a second, then kills the thread. Since this may add 
+data to Redis that you do not want processed, a FlushAll command is issued to the Redis database. 
+__With this in mind, it is recommended that all unit testing occurs on non-production devices.__
+
 ## YAML breakdown
 
 ```
