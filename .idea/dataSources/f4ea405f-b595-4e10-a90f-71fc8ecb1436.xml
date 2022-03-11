@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="ScrapeYard">
-  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.23">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.32">
     <root id="1">
       <ServerVersion>5.0.6</ServerVersion>
     </root>
@@ -12,20 +12,20 @@
     <schema id="5" parent="1" name="local"/>
     <table id="6" parent="2" name="Example"/>
     <column id="7" parent="6" name="_id">
-      <Position>1</Position>
       <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
     </column>
     <column id="8" parent="6" name="age">
-      <Position>2</Position>
       <DataType>Int32|4s</DataType>
+      <Position>2</Position>
     </column>
     <column id="9" parent="6" name="car">
-      <Position>3</Position>
       <DataType>String|12s</DataType>
+      <Position>3</Position>
     </column>
     <column id="10" parent="6" name="name">
-      <Position>4</Position>
       <DataType>String|12s</DataType>
+      <Position>4</Position>
     </column>
   </database-model>
 </dataSource>

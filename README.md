@@ -13,14 +13,13 @@ MongoDB provides a document based store for all messages that pass through the p
 
 Scrapeyard relies on the local developer to properly schema the data coming out of the ingest modules,
 as all documents are created for each ingest module, and are written to a single "ScrapeYard" database.
-The required JSON schema is as follows:
+The required JSON schema being pushed to Redis must be as follows:
 
 ``` 
 { "Module": "Example",
   "Data": { "NESTED": "JSON", "DATA": "HERE" }, 
   }
 ```
-
 This ensures each ingest module has its own MongoDB collection, for ease of later querying and add-ons. 
 
 ## Testing
