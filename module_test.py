@@ -29,7 +29,7 @@ def module_test(test_module):
             f.write("Redis database not accessible. Check Redis settings inside config.yaml, or if the database is running.\n")
             print("Redis database not accessible. Check Redis settings inside config.yaml, or if the database is running.\n")
             return
-        module = importlib.import_module(test_module)
+        module = importlib.import_module("ingest." + test_module)
         try:
             type(module.QueryClass)
         except:
