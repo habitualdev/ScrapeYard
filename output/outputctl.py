@@ -31,21 +31,23 @@ class OutputCtl:
                 m = MongoClient(host=mongo_host, port=mongo_port)
                 mdb = m["ScrapeYard"][json.loads(json_data)["Module"]]
                 mdb.insert_one(json.loads(json_data)["Data"])
-
                 ### SEND TO ENDPOINTS ###
-                for mod in parsed_yaml["Modules"]["Output"]:
-                    try:
-                        print("output." + mod + " reloaded...")
-                        module = importlib.import_module("output." + mod)
+                try:
+                    for mod in parsed_yaml["Modules"]["Output"]:
                         try:
-                            with open("output." + mod + ".lck", "w") as f:
-                                f.write(datetime.datetime.now().strftime("%H:%M:%S"))
-                            thread = threading.Thread(target=module.__init__, args=str(json_data))
-                            thread.start()
+                            print("output." + mod + " reloaded...")
+                            module = importlib.import_module("output." + mod)
+                            try:
+                                with open("output." + mod + ".lck", "w") as f:
+                                    f.write(datetime.datetime.now().strftime("%H:%M:%S"))
+                                thread = threading.Thread(target=module.__init__, args=str(json_data))
+                                thread.start()
+                            except:
+                                error_string = "Unable to start the module: " + mod
+                                logging.log(logging.ERROR, error_string)
                         except:
-                            error_string = "Unable to start the module: " + mod
+                            error_string = "Unable to load the module: " + mod
                             logging.log(logging.ERROR, error_string)
-                    except:
-                        error_string = "Unable to load the module: " + mod
-                        logging.log(logging.ERROR, error_string)
-                r.close()
+                except:
+                    print("No modules detected.")
+                    r.close()

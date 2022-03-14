@@ -14,7 +14,7 @@ import requests
 
 def get_records():
     web_records = requests.get("https://poweroutage.us/api/web/states?key=18561563181588&countryid=us")
-    return web_records.json()
+    return web_records.json()["WebStateRecord"]
 
 
 class QueryClass:
@@ -29,7 +29,7 @@ class QueryClass:
                 self.load_redis(parsed_yaml)
             time.sleep(1)
             self.n += 1
-            if not exists("ingest.Example.lck"):
+            if not exists("ingest.PowerOutageUS.lck"):
                 break
 
     def load_redis(self, parsed_yaml):
@@ -37,12 +37,11 @@ class QueryClass:
         redis_port = parsed_yaml['Databases']['Redis']['Port']
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
-
-        for record in self.data["WebStateRecord"]:
+        for record in self.data:
             try:
-                r.rpush("data", record)
+                r.rpush("data", '{"Module":"PowerOutageUS", "Data": ' + str(record).replace("\'", "\"")[:-1] + ",\"TimeStamp\":\"" + str(time.time()) + '"}}')
             except:
-                print("Example : Unable to push to Redis stack")
+                print("PowerOutageUS : Unable to push to Redis stack")
 
     def retrieve_data(self):
         self.data = get_records()

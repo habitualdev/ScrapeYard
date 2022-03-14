@@ -7,7 +7,11 @@
       <secret-storage>master_key</secret-storage>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="@" />
+          <node kind="schema">
+            <name qname="@" />
+            <name qname="ScrapeYard" />
+            <name qname="ScrapeYard," />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>

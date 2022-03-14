@@ -5,7 +5,7 @@ Modules:
     - Example
     - PowerOutageUS
   Output:
-    - Splunk
+#   - Splunk
 #    - Elasticsearch - Not yet implemented
 Databases:
   Redis:
