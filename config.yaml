@@ -3,6 +3,7 @@ Manager:
 Modules:
   Ingest:
     - Example
+    - PowerOutageUS
   Output:
     - Splunk
 #    - Elasticsearch - Not yet implemented

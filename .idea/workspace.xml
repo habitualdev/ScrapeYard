@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="habitual" />
+    <option name="SERVER_URL" value="https://habitual.live" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ingest/PowerOutageUS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49912844-3f41-4b40-bc73-7fb16fb3a346.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49912844-3f41-4b40-bc73-7fb16fb3a346/storage_v2/_src_/database/Mongo.1DBxBA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49912844-3f41-4b40-bc73-7fb16fb3a346/storage_v2/_src_/database/Mongo.1DBxBA/schema/.UokAAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49912844-3f41-4b40-bc73-7fb16fb3a346/storage_v2/_src_/database/Mongo.1DBxBA/schema/test.kkQ2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49912844-3f41-4b40-bc73-7fb16fb3a346/storage_v2/_src_/schema/data.qu8uAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mongodb/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/mongodb/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/redis/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/data/redis/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -40,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module_test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -170,6 +179,8 @@
       <workItem from="1646702758302" duration="1694000" />
       <workItem from="1646787531390" duration="32514000" />
       <workItem from="1647009457061" duration="657000" />
+      <workItem from="1647265159054" duration="1455000" />
+      <workItem from="1647266624321" duration="989000" />
     </task>
     <servers />
   </component>
@@ -186,6 +197,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
