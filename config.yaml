@@ -4,6 +4,8 @@ Modules:
   Ingest:
     - Example
     - PowerOutageUS
+    - PowerOutageUA
+    - PowerOutageCA
   Output:
 #   - Splunk
 #    - Elasticsearch - Not yet implemented
