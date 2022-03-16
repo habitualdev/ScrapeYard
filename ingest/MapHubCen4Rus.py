@@ -36,4 +36,4 @@ class QueryClass:
                 print("PowerOutageUS : Unable to push to Redis stack")
 
     def retrieve_data(self):
-        self.data = '{"Module":"Example", "Data": {"name":"John", "age":30, "car":"civic"}}'
+        self.data = get_points()
