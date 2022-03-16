@@ -29,8 +29,12 @@ class OutputCtl:
             else:
                 ### SEND DATA TO MONGODB ###
                 m = MongoClient(host=mongo_host, port=mongo_port)
-                mdb = m["ScrapeYard"][json.loads(json_data)["Module"]]
-                mdb.insert_one(json.loads(json_data)["Data"])
+                try:
+                    mdb = m["ScrapeYard"][json.loads(json_data)["Module"]]
+                    mdb.insert_one(json.loads(json_data)["Data"])
+                except Exception as e:
+                    print(e)
+
                 ### SEND TO ENDPOINTS ###
                 try:
                     for mod in parsed_yaml["Modules"]["Output"]:
