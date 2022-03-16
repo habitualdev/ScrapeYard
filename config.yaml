@@ -6,6 +6,7 @@ Modules:
     - PowerOutageUS
     - PowerOutageUA
     - PowerOutageCA
+    - MapHubCen4Rus
   Output:
 #   - Splunk
 #    - Elasticsearch - Not yet implemented
