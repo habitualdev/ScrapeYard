@@ -34,7 +34,7 @@ def get_urls(maltiverse_auth):
 class QueryClass:
     def __init__(self):
         self.data = ""
-        self.QueryTime = 360
+        self.QueryTime = 3600
         self.n = self.QueryTime
         parsed_yaml = manager.config.get_config()
         while True:

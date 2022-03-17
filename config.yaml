@@ -1,5 +1,5 @@
 Manager:
-  UpdatePeriod: 300
+  UpdatePeriod: 3600
 Modules:
   Ingest:
     - Example
