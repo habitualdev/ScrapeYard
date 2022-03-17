@@ -50,7 +50,6 @@ class QueryClass:
                     existing_entries.append(x)
                 if len(existing_entries) == 0:
                     try:
-                        print(json.loads(json.dumps(record))["title"])
                         r.rpush("data",
                                 '{"Module":"MapHubCen4Rus", "Data": ' + json.dumps(record) + ",\"TimeStamp\":\"" + str(
                                     time.time()) + '"}')
