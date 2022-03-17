@@ -61,7 +61,6 @@ def module_test(test_module):
                 print(" -- JSON not parsable.", "\n")
         f.write("Flushing Redis database of any testing data. \n")
         print("Flushing Redis database of any testing data.", "\n")
-        r.flushall()
 
 
 if __name__ == '__main__':
@@ -77,5 +76,8 @@ if __name__ == '__main__':
             f.write("Testing %s module...\n" % mod)
             print("Testing %s module...\n" % mod)
             module_test(mod)
+            r = redis.Redis(host=redis_host, port=redis_port)
+            r.flushall()
+            r.close()
             f.write("---------------------------------------------------------")
             print("---------------------------------------------------------")

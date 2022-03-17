@@ -54,7 +54,6 @@ class QueryClass:
 
         for entry_set in self.data:
             for entry in entry_set["hits"]:
-                print(entry)
                 try:
                     r.rpush("data",
                             '{"Module":"Maltiverse", "Data": ' + json.dumps(entry) + ",\"TimeStamp\":\"" + str(
