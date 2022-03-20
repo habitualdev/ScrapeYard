@@ -5,6 +5,11 @@ and managing them with simple YAML configurations. Designed with simplicity in m
 that different endpoints may require different "craziness" in order to work. Modules may be as complex as
 needed without impact overall framework simplicity.
 
+<p align="center">
+  <img src="assets/ScrapeYardFlow.png" />
+</p>
+
+
 ## Database Schema
 
 Scrapeyard relies on Redis and MongoDB for queueing and local retention of all data.
