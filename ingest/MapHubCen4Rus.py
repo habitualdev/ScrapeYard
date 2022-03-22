@@ -12,7 +12,9 @@ import ast
 
 def get_points():
     entry_list = []
-    raw_json = requests.post("https://maphub.net/json/map_load/176607","{}").json()["geojson"]["features"]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}
+    raw_json = requests.post("https://maphub.net/json/map_load/176607","{}", headers=headers).json()["geojson"]["features"]
 
     for entry in raw_json:
         entry_list.append(entry["properties"])
@@ -56,8 +58,6 @@ class QueryClass:
                     except:
                         print(" MapHubCen4Rus: Unable to push to Redis stack")
 
-                else:
-                    print("Entry exists.")
             except Exception as e:
                 # print(json_data)
                 print(e)

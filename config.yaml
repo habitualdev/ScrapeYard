@@ -7,7 +7,7 @@ Modules:
     - PowerOutageUA
     - PowerOutageCA
     - MapHubCen4Rus
-    - Maltiverse
+#    - Maltiverse
   Output:
 #   - Splunk
 #    - Elasticsearch - Not yet implemented

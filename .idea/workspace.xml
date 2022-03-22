@@ -17,8 +17,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageCA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageUA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageUA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/outputctl.py" beforeDir="false" afterPath="$PROJECT_DIR$/output/outputctl.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,18 +61,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ingest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/ingest" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.DB Remove">
+  <component name="RunManager" selected="Docker.Database Up">
     <configuration name="Module Test" type="PythonConfigurationType" factoryName="Python">
       <module name="ScrapeYard" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,7 +119,7 @@
       <method v="2" />
     </configuration>
     <configuration name="DB Remove" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="sudo rm -rf data/mongodb/*.wt; sudo rm -rf data/mongodb/WiredTiger*; sudo rm -rf data/mongodb/storage.bson; sudo rm -rf data/mongodb/mongod.lock; sudo rm -rf data/mongodb/diagnostic.data; sudo rm -rf data/mongodb/journal; sudo rm -rf data/redis/dump.rdb; rm *.lck;" />
+      <option name="SCRIPT_TEXT" value="docker-compose down; sudo rm -rf data/mongodb/*.wt; sudo rm -rf data/mongodb/WiredTiger*; sudo rm -rf data/mongodb/storage.bson; sudo rm -rf data/mongodb/mongod.lock; sudo rm -rf data/mongodb/diagnostic.data; sudo rm -rf data/mongodb/journal; sudo rm -rf data/redis/dump.rdb; rm *.lck;" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="" />
       <option name="SCRIPT_OPTIONS" value="" />
@@ -151,6 +160,7 @@
     <configuration name="docker-compose.yml.mongodb: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="envFilePath" value="" />
           <option name="services">
             <list>
               <option value="mongodb" />
@@ -188,7 +198,8 @@
       <workItem from="1647009457061" duration="657000" />
       <workItem from="1647265159054" duration="1455000" />
       <workItem from="1647266624321" duration="6454000" />
-      <workItem from="1647797561455" duration="617000" />
+      <workItem from="1647797561455" duration="1923000" />
+      <workItem from="1647952388137" duration="14213000" />
     </task>
     <servers />
   </component>

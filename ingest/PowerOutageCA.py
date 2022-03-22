@@ -39,7 +39,7 @@ class QueryClass:
         self.retrieve_data()
         for record in self.data:
             try:
-                r.rpush("data", '{"Module":"PowerOutageUS", "Data": ' + str(record).replace("\'", "\"")[:-1] + ",\"TimeStamp\":\"" + str(time.time()) + '"}}')
+                r.rpush("data", '{"Module":"PowerOutageCA", "Data": ' + str(record).replace("\'", "\"")[:-1] + ",\"TimeStamp\":\"" + str(time.time()) + '"}}')
             except:
                 print("PowerOutageUS : Unable to push to Redis stack")
 
