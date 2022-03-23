@@ -4,13 +4,13 @@
     <root id="1">
       <ServerVersion>5.0.6</ServerVersion>
     </root>
-    <schema id="2" parent="1" name="ScrapeYard">
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="config"/>
+    <schema id="4" parent="1" name="local"/>
+    <schema id="5" parent="1" name="ScrapeYard">
       <Current>1</Current>
     </schema>
-    <schema id="3" parent="1" name="admin"/>
-    <schema id="4" parent="1" name="config"/>
-    <schema id="5" parent="1" name="local"/>
-    <table id="6" parent="2" name="MapHubCen4Rus"/>
+    <table id="6" parent="5" name="MapHubCen4Rus"/>
     <column id="7" parent="6" name="_id">
       <DataType>ObjectId|12s</DataType>
       <Position>1</Position>

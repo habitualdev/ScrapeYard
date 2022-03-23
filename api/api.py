@@ -1,6 +1,7 @@
 import json
 import os
 import markdown
+import redis
 from flask import Flask
 from flask import send_file
 import markdown.extensions.fenced_code
@@ -19,6 +20,13 @@ def get_modules():
             time_text = fd.read()
             module_list[str(file).replace(".lck", "")] = time_text
     return json.dumps(module_list)
+
+def redis_stats():
+    parsed_yaml = manager.config.get_config()
+    redis_host = parsed_yaml['Databases']['Redis']['Host']
+    redis_port = parsed_yaml['Databases']['Redis']['Port']
+    r = redis.Redis(host=redis_host, port=redis_port)
+    return json.dumps({"redis": r.info("Keyspace")})
 
 
 def mongo_stats():
@@ -57,6 +65,11 @@ def start():
     @app.route("/api/mongodb/counts")
     def get_mongo_counts():
         return mongo_stats()
+
+    @app.route("/api/redis/stats")
+    def get_redis_stats():
+        return redis_stats()
+
 
     @app.route("/api/modules")
     def hello_world():

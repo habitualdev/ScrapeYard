@@ -17,16 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageUA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageUA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/outputctl.py" beforeDir="false" afterPath="$PROJECT_DIR$/output/outputctl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +32,17 @@
         <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -73,7 +77,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Database Up">
+  <component name="RunManager" selected="Shell Script.Requirements Update">
     <configuration name="Module Test" type="PythonConfigurationType" factoryName="Python">
       <module name="ScrapeYard" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,7 +203,8 @@
       <workItem from="1647265159054" duration="1455000" />
       <workItem from="1647266624321" duration="6454000" />
       <workItem from="1647797561455" duration="1923000" />
-      <workItem from="1647952388137" duration="14213000" />
+      <workItem from="1647952388137" duration="15727000" />
+      <workItem from="1648032514962" duration="1625000" />
     </task>
     <servers />
   </component>

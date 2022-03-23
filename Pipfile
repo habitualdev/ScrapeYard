@@ -11,6 +11,7 @@ fastapi = "*"
 flask = "*"
 falcon = "*"
 markdown = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"

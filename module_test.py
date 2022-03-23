@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-import sys
+import pytest
 import threading
 import importlib
 import time
@@ -75,9 +75,9 @@ if __name__ == '__main__':
         with open("ingest_test_report.txt", "a") as f:
             f.write("Testing %s module...\n" % mod)
             print("Testing %s module...\n" % mod)
-            module_test(mod)
+            assert module_test(mod)
             r = redis.Redis(host=redis_host, port=redis_port)
-            r.flushall()
+            assert r.flushall()
             r.close()
             f.write("---------------------------------------------------------")
             print("---------------------------------------------------------")
