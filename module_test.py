@@ -28,14 +28,14 @@ def module_test(test_module):
         except:
             f.write("Redis database not accessible. Check Redis settings inside config.yaml, or if the database is running.\n")
             print("Redis database not accessible. Check Redis settings inside config.yaml, or if the database is running.\n")
-            return
+            return False
         module = importlib.import_module("ingest." + test_module)
         try:
             type(module.QueryClass)
         except:
             f.write("No QueryClass class to instantiate. \n")
             print("No QueryClass class to instantiate. \n")
-            return
+            return False
         thread = threading.Thread(target=module.QueryClass, daemon=True)
         thread.start()
         time.sleep(1)
@@ -43,7 +43,7 @@ def module_test(test_module):
         if json_data is None:
             f.write("No data returned.")
             print("No data returned.")
-            return
+            return False
         else:
             f.write("Data returned/ingested:")
             f.write(" -- " + str(json_data)[1:])
@@ -59,8 +59,10 @@ def module_test(test_module):
             except:
                 f.write(" -- JSON not parsable. \n")
                 print(" -- JSON not parsable.", "\n")
+                return False
         f.write("Flushing Redis database of any testing data. \n")
         print("Flushing Redis database of any testing data.", "\n")
+        return True
 
 
 if __name__ == '__main__':

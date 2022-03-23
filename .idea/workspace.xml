@@ -17,9 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +202,7 @@
       <workItem from="1647266624321" duration="6454000" />
       <workItem from="1647797561455" duration="1923000" />
       <workItem from="1647952388137" duration="15727000" />
-      <workItem from="1648032514962" duration="1625000" />
+      <workItem from="1648032514962" duration="1920000" />
     </task>
     <servers />
   </component>
@@ -216,7 +214,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
