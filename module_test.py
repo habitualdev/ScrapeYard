@@ -65,7 +65,7 @@ def module_test(test_module):
         return True
 
 
-if __name__ == '__main__':
+def test_ingest_module():
     try:
         os.remove("ingest_test_report.txt")
     except:
