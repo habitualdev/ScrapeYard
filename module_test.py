@@ -62,7 +62,7 @@ def module_test(test_module):
                 return False
         f.write("Flushing Redis database of any testing data. \n")
         print("Flushing Redis database of any testing data.", "\n")
-        r.flushdb()
+        r.flushall()
         return True
 
 
@@ -79,9 +79,6 @@ def test_ingest_module():
             f.write("Testing %s module...\n" % mod)
             print("Testing %s module...\n" % mod)
             assert module_test(mod)
-            r = redis.Redis(host=redis_host, port=redis_port)
-            r.flushdb()
-            r.close()
             f.write("---------------------------------------------------------")
             print("---------------------------------------------------------")
         time.sleep(2)
