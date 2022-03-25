@@ -3,12 +3,13 @@ Manager:
 Modules:
   Ingest:
     - Example
+    - Maltiverse
+    - CveTrendsTweets
     - PowerOutageUS
     - PowerOutageUA
     - PowerOutageCA
     - MapHubCen4Rus
-    - Maltiverse
-    - CveTrendsTweets
+
   Output:
 #   - Splunk
 #    - Elasticsearch - Not yet implemented
