@@ -13,7 +13,7 @@ import ast
 def get_points():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}
-    raw_json = requests.post("https://cvetrends.com/api/cves/24hrs", data="{}", headers=headers).json()
+    raw_json = requests.get("https://cvetrends.com/api/cves/24hrs", headers=headers).json()
 
     return raw_json
 

@@ -21,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_16_22,_8_06_AM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_16_22__8_06_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +207,7 @@
       <workItem from="1647266624321" duration="6454000" />
       <workItem from="1647797561455" duration="1923000" />
       <workItem from="1647952388137" duration="15727000" />
-      <workItem from="1648032514962" duration="8013000" />
+      <workItem from="1648032514962" duration="8424000" />
     </task>
     <servers />
   </component>
