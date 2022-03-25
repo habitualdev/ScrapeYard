@@ -16,10 +16,7 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" afterDir="false" />
-    </list>
+    <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,7 +200,7 @@
       <workItem from="1647266624321" duration="6454000" />
       <workItem from="1647797561455" duration="1923000" />
       <workItem from="1647952388137" duration="15727000" />
-      <workItem from="1648032514962" duration="10233000" />
+      <workItem from="1648032514962" duration="10774000" />
     </task>
     <servers />
   </component>

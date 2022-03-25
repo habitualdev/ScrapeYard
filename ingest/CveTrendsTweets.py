@@ -43,12 +43,12 @@ class QueryClass:
                 try:
                     existing_entries = []
                     mdb = m["ScrapeYard"]["CveTrendsTweets"]
-                    for x in mdb.find({}, {"cve_tweets": json.loads(json.dumps(entry))}):
+                    for x in mdb.find({}, {"CVE": record["cve"], "tweet": entry}):
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
                             r.rpush("data",
-                                    '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": self.data["cve"], "tweet": record}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
+                                    '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": record["cve"], "tweet": entry}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                         except:
                             print(" CveTrendsTweets: Unable to push to Redis stack")
 
