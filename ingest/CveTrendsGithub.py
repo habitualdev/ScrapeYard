@@ -43,12 +43,12 @@ class QueryClass:
                 try:
                     existing_entries = []
                     mdb = m["ScrapeYard"]["CveTrendsGithub"]
-                    for x in mdb.find({}, {"CVE": record["cve"], "created": entry["created"], "description": entry["description"],  "name": entry["name"], "url": entry["url"]}):
+                    for x in mdb.find({}, {"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "created": entry["created"], "description": entry["description"],  "name": entry["name"], "url": entry["url"]}):
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
                             r.rpush("data",
-                                    '{"Module":"CveTrendsGithub", "Data": ' + json.dumps({"CVE": record["cve"], "created": entry["created"], "description": entry["description"],  "name": entry["name"], "url": entry["url"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
+                                    '{"Module":"CveTrendsGithub", "Data": ' + json.dumps({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "created": entry["created"], "description": entry["description"],  "name": entry["name"], "url": entry["url"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                         except:
                             print(" CveTrendsGithub: Unable to push to Redis stack")
 

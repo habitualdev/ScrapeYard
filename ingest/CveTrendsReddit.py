@@ -27,7 +27,7 @@ class QueryClass:
                 self.load_redis(parsed_yaml)
             time.sleep(1)
             self.n += 1
-            if not exists("ingest.CveTrendsTweets.lck"):
+            if not exists("ingest.CveTrendsReddit.lck"):
                 break
 
     def load_redis(self, parsed_yaml):
@@ -38,19 +38,19 @@ class QueryClass:
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
         for record in self.data:
-            for entry in record["tweets"]:
+            for entry in record["reddit_posts"]:
                 m = MongoClient(host=mongo_host, port=mongo_port)
                 try:
                     existing_entries = []
-                    mdb = m["ScrapeYard"]["CveTrendsTweets"]
-                    for x in mdb.find({}, {"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "tweet": entry["tweet_text"], "created_at": entry["created_at"],  "twitter_user_handle": entry["twitter_user_handle"], "twitter_user_name": entry["twitter_user_name"]}):
+                    mdb = m["ScrapeYard"]["CveTrendsReddit"]
+                    for x in mdb.find({}, {"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "title": entry["title"], "created": entry["created"], "reddit_url": entry["reddit_url"]}):
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
                             r.rpush("data",
-                                    '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "tweet": entry["tweet_text"], "created_at": entry["created_at"],  "twitter_user_handle": entry["twitter_user_handle"], "twitter_user_name": entry["twitter_user_name"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
+                                    '{"Module":"CveTrendsReddit", "Data": ' + json.dumps({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "title": entry["title"], "created": entry["created"], "reddit_url": entry["reddit_url"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                         except:
-                            print(" CveTrendsTweets: Unable to push to Redis stack")
+                            print(" CveTrendsReddit: Unable to push to Redis stack")
 
                 except Exception as e:
                     print(e)
