@@ -6,6 +6,7 @@ Modules:
     - Maltiverse
     - CveTrendsTweets
     - CveTrendsGithub
+    - CveTrendsReddit
     - PowerOutageUS
     - PowerOutageUA
     - PowerOutageCA

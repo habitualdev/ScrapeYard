@@ -17,6 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ingest/CveTrendsReddit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/CveTrendsGithub.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsGithub.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" afterDir="false" />
@@ -204,7 +205,7 @@
       <workItem from="1647266624321" duration="6454000" />
       <workItem from="1647797561455" duration="1923000" />
       <workItem from="1647952388137" duration="15727000" />
-      <workItem from="1648032514962" duration="14549000" />
+      <workItem from="1648032514962" duration="14946000" />
     </task>
     <servers />
   </component>
