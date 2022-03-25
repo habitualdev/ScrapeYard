@@ -43,12 +43,12 @@ class QueryClass:
                 try:
                     existing_entries = []
                     mdb = m["ScrapeYard"]["CveTrendsTweets"]
-                    for x in mdb.find({}, {"CVE": record["cve"], "tweet": entry}):
+                    for x in mdb.find({}, {"CVE": record["cve"], "tweet": entry["tweet_text"], "created_at": entry["created_at"],  "twitter_user_handle": entry["twitter_user_handle"], "twitter_user_name": entry["twitter_user_name"]}):
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
                             r.rpush("data",
-                                    '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": record["cve"], "tweet": entry}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
+                                    '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": record["cve"], "tweet": entry["tweet_text"], "created_at": entry["created_at"],  "twitter_user_handle": entry["twitter_user_handle"], "twitter_user_name": entry["twitter_user_name"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                         except:
                             print(" CveTrendsTweets: Unable to push to Redis stack")
 
