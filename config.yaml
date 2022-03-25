@@ -5,6 +5,7 @@ Modules:
     - Example
     - Maltiverse
     - CveTrendsTweets
+    - CveTrendsGithub
     - PowerOutageUS
     - PowerOutageUA
     - PowerOutageCA
