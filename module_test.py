@@ -20,11 +20,10 @@ def module_test(test_module):
     with open("ingest_test_report.txt", "a") as f:
         r = redis.Redis(host=redis_host, port=redis_port)
         try:
-            f.write("Redis database information: \n")
-            f.write(str(r.info()))
+            r.info()
+            f.write("Redis connection successful\n")
             f.write("\n")
-            print("Redis database information: \n")
-            print(r.info(), "\n")
+            print("Redis connection successful\n")
         except:
             f.write("Redis database not accessible. Check Redis settings inside config.yaml, or if the database is running.\n")
             print("Redis database not accessible. Check Redis settings inside config.yaml, or if the database is running.\n")
