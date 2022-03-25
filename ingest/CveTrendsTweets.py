@@ -37,22 +37,23 @@ class QueryClass:
         mongo_port = parsed_yaml['Databases']['Mongodb']['Port']
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
-        for record in self.data["tweets"]:
-            m = MongoClient(host=mongo_host, port=mongo_port)
-            try:
-                existing_entries = []
-                mdb = m["ScrapeYard"]["CveTrendsTweets"]
-                for x in mdb.find({}, {"cve_tweets": json.loads(json.dumps(record))}):
-                    existing_entries.append(x)
-                if len(existing_entries) == 0:
-                    try:
-                        r.rpush("data",
-                                '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": self.data["cve"], "tweet": record}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
-                    except:
-                        print(" CveTrendsTweets: Unable to push to Redis stack")
+        for record in self.data:
+            for entry in record["tweets"]:
+                m = MongoClient(host=mongo_host, port=mongo_port)
+                try:
+                    existing_entries = []
+                    mdb = m["ScrapeYard"]["CveTrendsTweets"]
+                    for x in mdb.find({}, {"cve_tweets": json.loads(json.dumps(entry))}):
+                        existing_entries.append(x)
+                    if len(existing_entries) == 0:
+                        try:
+                            r.rpush("data",
+                                    '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": self.data["cve"], "tweet": record}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
+                        except:
+                            print(" CveTrendsTweets: Unable to push to Redis stack")
 
-            except Exception as e:
-                print(e)
+                except Exception as e:
+                    print(e)
 
 
     def retrieve_data(self):
