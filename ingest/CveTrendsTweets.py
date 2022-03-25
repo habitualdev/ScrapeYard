@@ -12,8 +12,7 @@ import ast
 
 def get_points():
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}
-    raw_json = requests.get("https://cvetrends.com/api/cves/24hrs", headers=headers).json()
-
+    raw_json = requests.get("https://cvetrends.com/api/cves/24hrs", headers=headers).json()['data']
     return raw_json
 
 class QueryClass:
@@ -38,18 +37,17 @@ class QueryClass:
         mongo_port = parsed_yaml['Databases']['Mongodb']['Port']
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
-        for record in self.data["data"]:
+        for record in self.data["tweets"]:
             m = MongoClient(host=mongo_host, port=mongo_port)
             try:
                 existing_entries = []
                 mdb = m["ScrapeYard"]["CveTrendsTweets"]
-                for x in mdb.find({}, {"title": json.loads(json.dumps(record))["cve"]["tweets"]}):
+                for x in mdb.find({}, {"cve_tweets": json.loads(json.dumps(record))}):
                     existing_entries.append(x)
                 if len(existing_entries) == 0:
                     try:
                         r.rpush("data",
-                                '{"Module":"CveTrendsTweets", "Data": ' + json.dumps(record["cve"]["tweets"]) + ",\"TimeStamp\":\"" + str(
-                                    time.time()) + '"}')
+                                '{"Module":"CveTrendsTweets", "Data": ' + json.dumps({"CVE": self.data["cve"], "tweet": record}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                     except:
                         print(" CveTrendsTweets: Unable to push to Redis stack")
 
