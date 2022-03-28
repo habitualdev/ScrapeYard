@@ -41,14 +41,9 @@ class OutputCtl:
                         try:
                             print("output." + mod + " reloaded...")
                             module = importlib.import_module("output." + mod)
-                            try:
-                                with open("output." + mod + ".lck", "x") as f:
-                                    f.write(datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
-                                thread = threading.Thread(target=module.__init__, args=str(json_data))
-                                thread.start()
-                            except:
-                                error_string = "Unable to start the module: " + mod
-                                logging.log(logging.ERROR, error_string)
+                            thread = threading.Thread(target=module.__init__, args=str(json_data))
+                            thread.start()
+
                         except:
                             error_string = "Unable to load the module: " + mod
                             logging.log(logging.ERROR, error_string)

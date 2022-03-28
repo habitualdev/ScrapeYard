@@ -3,7 +3,7 @@
 A modular framework for querying novel data endpoints, sending the data to either splunk or elasticsearch
 and managing them with simple YAML configurations. Designed with simplicity in mind, while keeping in mind 
 that different endpoints may require different "craziness" in order to work. Modules may be as complex as
-needed without impact overall framework simplicity.
+needed without impact overall framework simplicity. 
 
 <p align="center">
   <img src="assets/ScrapeYardFlow.png" />
@@ -31,12 +31,8 @@ This ensures each ingest module has its own MongoDB collection, for ease of late
 
 Scrapeyard provides a module validator, located in the tests directory.
 
-Usage:
-
-``` > python module_test.py ingest.Example ```
-
 This will test the following:
- - Redis accessability
+ - Redis accessibility
  - Existence of class "QueryClass"
  - Proper loading of Redis database with data
  - Is the data proper JSON
