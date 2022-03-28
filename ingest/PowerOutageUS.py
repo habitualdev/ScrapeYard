@@ -20,7 +20,7 @@ def get_records():
 class QueryClass:
     def __init__(self):
         self.data = ""
-        self.QueryTime = 10
+        self.QueryTime = 300
         self.n = self.QueryTime
         parsed_yaml = manager.config.get_config()
         while True:
