@@ -1,6 +1,7 @@
 import datetime
 import importlib
 import logging
+import os.path
 import threading
 import yaml
 import output.outputctl
@@ -20,10 +21,11 @@ def run_modules(yaml_parsed):
             print("ingest." + mod + " reloaded...")  # Print the module to be loaded to stdout for logging purposes
             module = importlib.import_module("ingest." + mod)
             try:
-                with open("ingest." + mod + ".lck", "w") as f:  # Drop a lock file for simple inter-thread communication
-                    f.write(datetime.datetime.now().strftime("%H:%M:%S"))  # Write the time loaded to the lock file
-                thread = threading.Thread(target=module.QueryClass)  # start a separate thread for the module
-                thread.start()
+                if not os.path.exists("ingest." + mod + ".lck"):
+                    with open("ingest." + mod + ".lck", "w") as f:  # Drop a lock file for simple inter-thread communication
+                        f.write(datetime.datetime.now().strftime("%H:%M:%S"))  # Write the time loaded to the lock file
+                    thread = threading.Thread(target=module.QueryClass)  # start a separate thread for the module
+                    thread.start()
             except:
                 error_string = "Unable to start the module: " + mod  # To see if QueryClass fails
                 logging.log(logging.ERROR, error_string)
@@ -31,10 +33,11 @@ def run_modules(yaml_parsed):
             error_string = "Unable to load the module: " + mod  # To see if importlib fails
             logging.log(logging.ERROR, error_string)
     try:
-        with open("outputctl" + ".lck", "w") as f:
-            f.write(datetime.datetime.now().strftime("%H:%M:%S"))
-        thread = threading.Thread(target=output.outputctl.OutputCtl)
-        thread.start()
+        if not os.path.exists("outputctl" + ".lck"):
+            with open("outputctl" + ".lck", "w") as f:
+                f.write(datetime.datetime.now().strftime("%H:%M:%S"))
+            thread = threading.Thread(target=output.outputctl.OutputCtl)
+            thread.start()
     except:
         error_string = "Unable to start the module: " + mod  # To check if OutputCtl fails
         logging.log(logging.ERROR, error_string)
