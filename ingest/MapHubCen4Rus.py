@@ -1,4 +1,5 @@
 import base64
+import hashlib
 import json
 import time
 from os.path import exists
@@ -52,7 +53,7 @@ class QueryClass:
                     existing_entries.append(x)
                 if len(existing_entries) == 0:
                     try:
-                        r.rpush("data",
+                        r.rpush(str(hashlib.md5(json.dumps(record).encode()).hexdigest()),
                                 '{"Module":"MapHubCen4Rus", "Data": ' + json.dumps(record) + ",\"TimeStamp\":\"" + str(
                                     time.time()) + '"}')
                     except:

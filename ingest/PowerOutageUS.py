@@ -1,3 +1,5 @@
+import hashlib
+import json
 import time
 from os.path import exists
 import redis
@@ -39,7 +41,7 @@ class QueryClass:
         self.retrieve_data()
         for record in self.data:
             try:
-                r.rpush("data", '{"Module":"PowerOutageUS", "Data": ' + str(record).replace("\'", "\"")[:-1] + ",\"TimeStamp\":\"" + str(time.time()) + '"}}')
+                r.rpush(str(hashlib.md5(json.dumps(record).encode()).hexdigest()), '{"Module":"PowerOutageUS", "Data": ' + str(record).replace("\'", "\"")[:-1] + ",\"TimeStamp\":\"" + str(time.time()) + '"}}')
             except:
                 print("PowerOutageUS : Unable to push to Redis stack")
 

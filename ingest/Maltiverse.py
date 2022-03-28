@@ -5,6 +5,7 @@ import redis
 import manager.config
 import requests
 import json
+import hashlib
 
 maltiverse_token = os.getenv("MALTIVERSE_API")
 
@@ -55,7 +56,7 @@ class QueryClass:
         for entry_set in self.data:
             for entry in entry_set["hits"]:
                 try:
-                    r.rpush("data",
+                    r.rpush(str(hashlib.md5(json.dumps(entry).encode()).hexdigest()),
                             '{"Module":"Maltiverse", "Data": ' + json.dumps(entry) + ",\"TimeStamp\":\"" + str(
                                 time.time()) + '"}')
                 except:

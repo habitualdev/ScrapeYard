@@ -1,3 +1,4 @@
+import hashlib
 import time
 from os.path import exists
 import redis
@@ -25,7 +26,7 @@ class QueryClass:
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
         try:
-            r.rpush("data", self.data)
+            r.rpush(str(hashlib.md5("1").hexdigest()), self.data)
         except:
             print("Example : Unable to push to Redis stack")
 

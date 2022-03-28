@@ -1,4 +1,5 @@
 import base64
+import hashlib
 import json
 import time
 from os.path import exists
@@ -47,7 +48,7 @@ class QueryClass:
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
-                            r.rpush("data",
+                            r.rpush(str(hashlib.md5(json.dumps(entry).encode()).hexdigest()),
                                     '{"Module":"CveTrendsGithub", "Data": ' + json.dumps({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "created": entry["created"], "description": entry["description"],  "name": entry["name"], "url": entry["url"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                         except:
                             print(" CveTrendsGithub: Unable to push to Redis stack")
