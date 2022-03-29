@@ -17,9 +17,11 @@ def __init__(*args):
     data = json.loads(rebuild_string[1:].replace("'", ""))
     logger = logging.getLogger('HEC_Handler')
     logger.setLevel(logging.DEBUG)
-    splunk_handler = SplunkHecHandler(splunk_host, splunk_token, port=splunk_port, proto=splunk_proto,source=data["Module"])
+    print(data)
+    splunk_handler = SplunkHecHandler(splunk_host, splunk_token, port=splunk_port, proto=splunk_proto, source=data["Module"])
     logger.addHandler(splunk_handler)
     logger.log(logging.INFO, data["Data"])
+    logger.removeHandler(splunk_handler)
 
 
 
