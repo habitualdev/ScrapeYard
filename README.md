@@ -3,7 +3,8 @@
 A modular framework for querying novel data endpoints, sending the data to either splunk or elasticsearch
 and managing them with simple YAML configurations. Designed with simplicity in mind, while keeping in mind 
 that different endpoints may require different "craziness" in order to work. Modules may be as complex as
-needed without impact overall framework simplicity. 
+needed without impact overall framework simplicity. Each module exists in its own thread, and is responsible
+for any data retrieval and processing. Modules that crash are automatically restarted at the default interval.
 
 <p align="center">
   <img src="assets/ScrapeYardFlow.png" />
