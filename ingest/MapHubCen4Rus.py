@@ -53,7 +53,7 @@ class QueryClass:
                     existing_entries.append(x)
                 if len(existing_entries) == 0:
                     try:
-                        r.rpush(str(hashlib.md5(json.dumps(record).encode()).hexdigest()),
+                        r.rpush("data",
                                 '{"Module":"MapHubCen4Rus", "Data": ' + json.dumps(record) + ",\"TimeStamp\":\"" + str(
                                     time.time()) + '"}')
                     except:

@@ -48,7 +48,7 @@ class QueryClass:
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
-                            r.rpush(str(hashlib.md5(json.dumps(entry).encode()).hexdigest()),
+                            r.rpush("data",
                                     '{"Module":"CveTrendsReddit", "Data": ' + json.dumps({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "title": entry["title"], "created": entry["created"], "reddit_url": entry["reddit_url"]}) + ",\"TimeStamp\":\"" + str(time.time()) + '"}')
                         except:
                             print(" CveTrendsReddit: Unable to push to Redis stack")

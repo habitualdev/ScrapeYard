@@ -4,32 +4,344 @@
     <root id="1">
       <ServerVersion>5.0.6</ServerVersion>
     </root>
-    <schema id="2" parent="1" name="admin"/>
-    <schema id="3" parent="1" name="config"/>
-    <schema id="4" parent="1" name="local"/>
-    <schema id="5" parent="1" name="ScrapeYard">
+    <schema id="2" parent="1" name="ScrapeYard">
       <Current>1</Current>
     </schema>
-    <table id="6" parent="5" name="MapHubCen4Rus"/>
-    <column id="7" parent="6" name="_id">
+    <schema id="3" parent="1" name="admin"/>
+    <schema id="4" parent="1" name="config"/>
+    <schema id="5" parent="1" name="local"/>
+    <table id="6" parent="2" name="CveTrendsGithub"/>
+    <table id="7" parent="2" name="CveTrendsReddit"/>
+    <table id="8" parent="2" name="CveTrendsTweets"/>
+    <table id="9" parent="2" name="MapHubCen4Rus"/>
+    <table id="10" parent="2" name="PowerOutageCA"/>
+    <table id="11" parent="2" name="PowerOutageUA"/>
+    <table id="12" parent="2" name="PowerOutageUS"/>
+    <table id="13" parent="4" name="system.sessions"/>
+    <table id="14" parent="5" name="startup_log"/>
+    <column id="15" parent="6" name="_id">
       <DataType>ObjectId|12s</DataType>
       <Position>1</Position>
     </column>
-    <column id="8" parent="6" name="description">
+    <column id="16" parent="6" name="CVE">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="6" name="Severity">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="18" parent="6" name="created">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="19" parent="6" name="description">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="20" parent="6" name="name">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="21" parent="6" name="url">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="22" parent="7" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="23" parent="7" name="CVE">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="24" parent="7" name="Severity">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="25" parent="7" name="created">
+      <DataType>Double|8s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="26" parent="7" name="reddit_url">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="27" parent="7" name="title">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="28" parent="8" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="29" parent="8" name="CVE">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="30" parent="8" name="Severity">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="31" parent="8" name="created_at">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="32" parent="8" name="tweet">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="33" parent="8" name="twitter_user_handle">
       <DataType>String|12s</DataType>
       <Position>2</Position>
     </column>
-    <column id="9" parent="6" name="group">
-      <DataType>Int64|12s</DataType>
+    <column id="34" parent="8" name="twitter_user_name">
+      <DataType>String|12s</DataType>
       <Position>3</Position>
     </column>
-    <column id="10" parent="6" name="marker-color">
+    <column id="35" parent="9" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="36" parent="9" name="description">
       <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="37" parent="9" name="group">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="38" parent="9" name="title">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="39" parent="9" name="marker-color">
+      <DataType>String|12s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="40" parent="10" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="41" parent="10" name="CustomerCount">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="42" parent="10" name="OutageCount">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="43" parent="10" name="StateName">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="44" parent="10" name="StateStatus">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="45" parent="10" name="TimeStamp">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="46" parent="11" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="47" parent="11" name="CustomerCount">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="48" parent="11" name="OutageCount">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="49" parent="11" name="StateName">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="50" parent="11" name="StateStatus">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="51" parent="11" name="TimeStamp">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="52" parent="12" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="53" parent="12" name="CustomerCount">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="54" parent="12" name="OutageCount">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="55" parent="12" name="StateName">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="56" parent="12" name="StateStatus">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="57" parent="12" name="TimeStamp">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="58" parent="13" name="_id">
+      <DataType>Object|4999544s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="59" parent="13" name="_id.id">
+      <DataType>UUID|12s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="60" parent="13" name="_id.uid">
+      <DataType>BinData|12s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="61" parent="13" name="lastUse">
+      <DataType>ISODate|91s</DataType>
       <Position>4</Position>
     </column>
-    <column id="11" parent="6" name="title">
+    <column id="62" parent="14" name="_id">
       <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="63" parent="14" name="buildinfo">
+      <DataType>Object|4999544s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="64" parent="14" name="buildinfo.allocator">
+      <DataType>String|12s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="65" parent="14" name="buildinfo.bits">
+      <DataType>Int32|4s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="66" parent="14" name="buildinfo.buildEnvironment">
+      <DataType>Object|4999544s</DataType>
       <Position>5</Position>
+    </column>
+    <column id="67" parent="14" name="buildinfo.buildEnvironment.cc">
+      <DataType>String|12s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="68" parent="14" name="buildinfo.buildEnvironment.ccflags">
+      <DataType>String|12s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="69" parent="14" name="buildinfo.buildEnvironment.cppdefines">
+      <DataType>String|12s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="70" parent="14" name="buildinfo.buildEnvironment.cxx">
+      <DataType>String|12s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="71" parent="14" name="buildinfo.buildEnvironment.cxxflags">
+      <DataType>String|12s</DataType>
+      <Position>10</Position>
+    </column>
+    <column id="72" parent="14" name="buildinfo.buildEnvironment.distarch">
+      <DataType>String|12s</DataType>
+      <Position>11</Position>
+    </column>
+    <column id="73" parent="14" name="buildinfo.buildEnvironment.distmod">
+      <DataType>String|12s</DataType>
+      <Position>12</Position>
+    </column>
+    <column id="74" parent="14" name="buildinfo.buildEnvironment.linkflags">
+      <DataType>String|12s</DataType>
+      <Position>13</Position>
+    </column>
+    <column id="75" parent="14" name="buildinfo.buildEnvironment.target_arch">
+      <DataType>String|12s</DataType>
+      <Position>14</Position>
+    </column>
+    <column id="76" parent="14" name="buildinfo.buildEnvironment.target_os">
+      <DataType>String|12s</DataType>
+      <Position>15</Position>
+    </column>
+    <column id="77" parent="14" name="buildinfo.debug">
+      <DataType>Boolean|12s</DataType>
+      <Position>16</Position>
+    </column>
+    <column id="78" parent="14" name="buildinfo.gitVersion">
+      <DataType>String|12s</DataType>
+      <Position>17</Position>
+    </column>
+    <column id="79" parent="14" name="buildinfo.javascriptEngine">
+      <DataType>String|12s</DataType>
+      <Position>18</Position>
+    </column>
+    <column id="80" parent="14" name="buildinfo.maxBsonObjectSize">
+      <DataType>Int32|4s</DataType>
+      <Position>19</Position>
+    </column>
+    <column id="81" parent="14" name="buildinfo.modules">
+      <DataType>list|4999545s</DataType>
+      <Position>20</Position>
+    </column>
+    <column id="82" parent="14" name="buildinfo.openssl">
+      <DataType>Object|4999544s</DataType>
+      <Position>21</Position>
+    </column>
+    <column id="83" parent="14" name="buildinfo.openssl.compiled">
+      <DataType>String|12s</DataType>
+      <Position>22</Position>
+    </column>
+    <column id="84" parent="14" name="buildinfo.openssl.running">
+      <DataType>String|12s</DataType>
+      <Position>23</Position>
+    </column>
+    <column id="85" parent="14" name="buildinfo.storageEngines">
+      <DataType>Array|2003s</DataType>
+      <Position>24</Position>
+    </column>
+    <column id="86" parent="14" name="buildinfo.sysInfo">
+      <DataType>String|12s</DataType>
+      <Position>25</Position>
+    </column>
+    <column id="87" parent="14" name="buildinfo.version">
+      <DataType>String|12s</DataType>
+      <Position>26</Position>
+    </column>
+    <column id="88" parent="14" name="buildinfo.versionArray">
+      <DataType>Array|2003s</DataType>
+      <Position>27</Position>
+    </column>
+    <column id="89" parent="14" name="cmdLine">
+      <DataType>Object|4999544s</DataType>
+      <Position>28</Position>
+    </column>
+    <column id="90" parent="14" name="cmdLine.net">
+      <DataType>Object|4999544s</DataType>
+      <Position>29</Position>
+    </column>
+    <column id="91" parent="14" name="cmdLine.net.bindIp">
+      <DataType>String|12s</DataType>
+      <Position>30</Position>
+    </column>
+    <column id="92" parent="14" name="hostname">
+      <DataType>String|12s</DataType>
+      <Position>31</Position>
+    </column>
+    <column id="93" parent="14" name="pid">
+      <DataType>Int64|12s</DataType>
+      <Position>32</Position>
+    </column>
+    <column id="94" parent="14" name="startTime">
+      <DataType>ISODate|91s</DataType>
+      <Position>33</Position>
+    </column>
+    <column id="95" parent="14" name="startTimeLocal">
+      <DataType>String|12s</DataType>
+      <Position>34</Position>
     </column>
   </database-model>
 </dataSource>

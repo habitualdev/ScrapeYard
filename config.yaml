@@ -2,8 +2,8 @@ Manager:
   UpdatePeriod: 3600
 Modules:
   Ingest:
-    - Example
-    - Maltiverse
+#    - Example
+#    - Maltiverse
     - CveTrendsTweets
     - CveTrendsGithub
     - CveTrendsReddit

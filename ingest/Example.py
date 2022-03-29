@@ -26,7 +26,7 @@ class QueryClass:
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
         try:
-            r.rpush(str(hashlib.md5("1").hexdigest()), self.data)
+            r.rpush("data", self.data)
         except:
             print("Example : Unable to push to Redis stack")
 

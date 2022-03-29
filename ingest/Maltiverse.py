@@ -56,11 +56,11 @@ class QueryClass:
         for entry_set in self.data:
             for entry in entry_set["hits"]:
                 try:
-                    r.rpush(str(hashlib.md5(json.dumps(entry).encode()).hexdigest()),
+                    r.rpush("data",
                             '{"Module":"Maltiverse", "Data": ' + json.dumps(entry) + ",\"TimeStamp\":\"" + str(
                                 time.time()) + '"}')
                 except:
-                    print("Example : Unable to push to Redis stack")
+                    print("Maltiverse : Unable to push to Redis stack")
 
     def retrieve_data(self):
         self.data = get_urls(maltiverse_token)
