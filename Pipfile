@@ -12,6 +12,7 @@ flask = "*"
 falcon = "*"
 markdown = "*"
 pytest = "*"
+elasticsearch = "*"
 
 [requires]
 python_version = "3.8"

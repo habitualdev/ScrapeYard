@@ -17,18 +17,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output/Elasticsearch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/CveTrendsGithub.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsGithub.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/CveTrendsReddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsReddit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/Example.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/Example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/Maltiverse.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/Maltiverse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageUA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageUA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageUS.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageUS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Splunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/output/Splunk.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +69,27 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ingest" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="timeTracker.activityTracker" value="null" />
+    <property name="timeTracker.comment" value="" />
+    <property name="timeTracker.inactivityPeriodInMills" value="600000" />
+    <property name="timeTracker.isAutoTrackingEnable" value="false" />
+    <property name="timeTracker.isAutoTrackingTemporaryDisabled" value="false" />
+    <property name="timeTracker.isManualTrackingEnable" value="false" />
+    <property name="timeTracker.isPaused" value="true" />
+    <property name="timeTracker.isPostAfterCommitEnabled" value="false" />
+    <property name="timeTracker.isPostedScheduled" value="true" />
+    <property name="timeTracker.isRunning" value="false" />
+    <property name="timeTracker.isScheduledEnabled" value="false" />
+    <property name="timeTracker.isWhenProjectClosedEnabled" value="false" />
+    <property name="timeTracker.issueId" value="Default" />
+    <property name="timeTracker.issueIdReadable" value="Default" />
+    <property name="timeTracker.pausedTime" value="0" />
+    <property name="timeTracker.query" value="" />
+    <property name="timeTracker.recordedTime" value="0" />
+    <property name="timeTracker.scheduledPeriod" value="19:00:0" />
+    <property name="timeTracker.startTime" value="0" />
+    <property name="timeTracker.timeInMills" value="0" />
+    <property name="timeTracker.type" value="Development" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -86,7 +100,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Database Up">
+  <component name="RunManager" selected="Shell Script.DB Remove">
     <configuration name="Module Test" type="PythonConfigurationType" factoryName="Python">
       <module name="ScrapeYard" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,8 +230,13 @@
       <workItem from="1648032514962" duration="16578000" />
       <workItem from="1648389874622" duration="614000" />
       <workItem from="1648495186764" duration="369000" />
+      <workItem from="1648730464866" duration="6383000" />
     </task>
-    <servers />
+    <servers>
+      <YouTrack url="https://yt.habitual.live">
+        <username>random</username>
+      </YouTrack>
+    </servers>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
