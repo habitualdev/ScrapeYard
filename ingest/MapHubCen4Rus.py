@@ -24,6 +24,8 @@ def get_points():
 
 class QueryClass:
     def __init__(self):
+        with open("ingest.MapHubCen4Rus.lck") as f:
+            self.start_time = f.read()
         self.data = ""
         self.QueryTime = 10
         self.n = self.QueryTime

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import os
+import glob
+import os.path
 import threading
 import time
 import api.api
@@ -8,6 +9,13 @@ import manager.config
 
 
 def main():
+
+    fileList = glob.glob(os.path.join(os.getcwd(),'*.lck'), recursive=False)
+    for filePath in fileList:
+        try:
+            os.remove(filePath)
+        except:
+            print("Error while deleting file : ", filePath)
     threading.Thread(target=api.api.start).start()
     data.dockerctl.start_database()
     while True:

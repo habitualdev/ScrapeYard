@@ -34,6 +34,8 @@ def get_urls(maltiverse_auth):
 
 class QueryClass:
     def __init__(self):
+        with open("ingest.Maltiverse.lck") as f:
+            self.start_time = f.read()
         self.data = ""
         self.QueryTime = 3600
         self.n = self.QueryTime
@@ -46,6 +48,9 @@ class QueryClass:
             self.n += 1
             if not exists("ingest.Maltiverse.lck"):
                 break
+            with open("ingest.Maltiverse.lck") as f:
+                if f.read() != self.start_time:
+                    break
 
     def load_redis(self, parsed_yaml):
         redis_host = parsed_yaml['Databases']['Redis']['Host']

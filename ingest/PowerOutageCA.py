@@ -21,6 +21,8 @@ def get_records():
 
 class QueryClass:
     def __init__(self):
+        with open("ingest.PowerOutageCA.lck") as f:
+            self.start_time = f.read()
         self.data = ""
         self.QueryTime = 300
         self.n = self.QueryTime
@@ -33,6 +35,10 @@ class QueryClass:
             self.n += 1
             if not exists("ingest.PowerOutageUS.lck"):
                 break
+            with open("ingest.PowerOutageCA.lck") as f:
+                    if f.read() != self.start_time:
+                        break
+
 
     def load_redis(self, parsed_yaml):
         redis_host = parsed_yaml['Databases']['Redis']['Host']

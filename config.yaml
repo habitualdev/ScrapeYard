@@ -13,7 +13,7 @@ Modules:
     - MapHubCen4Rus
 
   Output:
-    - Splunk
+#    - Splunk
 #    - Elasticsearch - Not yet implemented
 Databases:
   Redis:

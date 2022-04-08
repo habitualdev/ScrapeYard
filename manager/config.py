@@ -18,10 +18,10 @@ def get_config():
 def run_modules(yaml_parsed):
     for mod in yaml_parsed["Modules"]["Ingest"]:  # Read the parsed YAML to see what modules should be run.
         try:
-            print("ingest." + mod + " reloaded...")  # Print the module to be loaded to stdout for logging purposes
             module = importlib.import_module("ingest." + mod)
             try:
                 if not os.path.exists("ingest." + mod + ".lck"):
+                    print("ingest." + mod + " reloaded...")  # Print the module to be loaded to stdout for logging purposes
                     with open("ingest." + mod + ".lck", "w") as f:  # Drop a lock file for simple inter-thread communication
                         f.write(datetime.datetime.now().strftime("%H:%M:%S"))  # Write the time loaded to the lock file
                     thread = threading.Thread(target=module.QueryClass)  # start a separate thread for the module

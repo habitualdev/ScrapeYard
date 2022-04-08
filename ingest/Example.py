@@ -7,6 +7,8 @@ import manager.config
 
 class QueryClass:
     def __init__(self):
+        with open("ingest.Example.lck") as f:
+            self.start_time = f.read()
         self.data = ""
         self.QueryTime = 10
         self.n = self.QueryTime
@@ -19,6 +21,9 @@ class QueryClass:
             self.n += 1
             if not exists("ingest.Example.lck"):
                 break
+            with open("ingest.Example.lck") as f:
+                if f.read() != self.start_time:
+                    break
 
     def load_redis(self, parsed_yaml):
         redis_host = parsed_yaml['Databases']['Redis']['Host']
