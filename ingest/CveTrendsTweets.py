@@ -1,14 +1,10 @@
-import base64
-import hashlib
 import json
 import time
 from os.path import exists
 import redis
 from pymongo import MongoClient
-
 import manager.config
 import requests
-import ast
 
 
 def get_points():
@@ -49,7 +45,7 @@ class QueryClass:
                 try:
                     existing_entries = []
                     mdb = m["ScrapeYard"]["CveTrendsTweets"]
-                    for x in mdb.find({}, {"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "tweet": entry["tweet_text"], "created_at": entry["created_at"],  "twitter_user_handle": entry["twitter_user_handle"], "twitter_user_name": entry["twitter_user_name"]}):
+                    for x in mdb.find({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "tweet": entry["tweet_text"], "created_at": entry["created_at"],  "twitter_user_handle": entry["twitter_user_handle"], "twitter_user_name": entry["twitter_user_name"]}):
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:

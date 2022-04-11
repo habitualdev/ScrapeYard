@@ -17,21 +17,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4ea405f-b595-4e10-a90f-71fc8ecb1436.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/CveTrendsGithub.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsGithub.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/CveTrendsReddit.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsReddit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/CveTrendsTweets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/Example.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/Example.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingest/Maltiverse.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/Maltiverse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/MapHubCen4Rus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageUA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageUA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingest/PowerOutageUS.py" beforeDir="false" afterPath="$PROJECT_DIR$/ingest/PowerOutageUS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +101,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.DB Remove">
+  <component name="RunManager" selected="Shell Script.Requirements Update">
     <configuration name="Module Test" type="PythonConfigurationType" factoryName="Python">
       <module name="ScrapeYard" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,7 +233,7 @@
       <workItem from="1648495186764" duration="369000" />
       <workItem from="1648730464866" duration="7025000" />
       <workItem from="1649166383054" duration="1880000" />
-      <workItem from="1649441977799" duration="4088000" />
+      <workItem from="1649441977799" duration="8239000" />
     </task>
     <servers>
       <YouTrack url="https://yt.habitual.live">

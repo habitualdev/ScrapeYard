@@ -9,9 +9,9 @@ import manager.config
 
 
 def main():
-
     fileList = glob.glob(os.path.join(os.getcwd(),'*.lck'), recursive=False)
     for filePath in fileList:
+        print("Removing lock file: " + filePath)
         try:
             os.remove(filePath)
         except:

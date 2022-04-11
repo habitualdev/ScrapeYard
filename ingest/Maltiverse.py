@@ -5,7 +5,8 @@ import redis
 import manager.config
 import requests
 import json
-import hashlib
+from pymongo import MongoClient
+
 
 maltiverse_token = os.getenv("MALTIVERSE_API")
 
@@ -55,17 +56,28 @@ class QueryClass:
     def load_redis(self, parsed_yaml):
         redis_host = parsed_yaml['Databases']['Redis']['Host']
         redis_port = parsed_yaml['Databases']['Redis']['Port']
+        mongo_host = parsed_yaml['Databases']['Mongodb']['Host']
+        mongo_port = parsed_yaml['Databases']['Mongodb']['Port']
         r = redis.Redis(host=redis_host, port=redis_port)
         self.retrieve_data()
 
         for entry_set in self.data:
+            m = MongoClient(host=mongo_host, port=mongo_port)
             for entry in entry_set["hits"]:
+                existing_entries = []
+                mdb = m["ScrapeYard"]["Maltiverse"]
                 try:
-                    r.rpush("data",
-                            '{"Module":"Maltiverse", "Data": ' + json.dumps(entry) + ",\"TimeStamp\":\"" + str(
-                                time.time()) + '"}')
-                except:
-                    print("Maltiverse : Unable to push to Redis stack")
+                    for x in mdb.find(entry):
+                        existing_entries.append(x)
+                    if len(existing_entries) == 0:
+                        try:
+                            r.rpush("data",
+                                    '{"Module":"Maltiverse", "Data": ' + json.dumps(entry) + ",\"TimeStamp\":\"" + str(
+                                        time.time()) + '"}')
+                        except Exception as e:
+                            print("Maltiverse : Unable to push to Redis stack : " + str(e))
+                except Exception as e:
+                    print("Maltiverse : Unable to push to MongoDB : " + str(e))
 
     def retrieve_data(self):
         self.data = get_urls(maltiverse_token)

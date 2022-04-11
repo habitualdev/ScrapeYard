@@ -49,7 +49,7 @@ class QueryClass:
                 try:
                     existing_entries = []
                     mdb = m["ScrapeYard"]["CveTrendsReddit"]
-                    for x in mdb.find({}, {"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "title": entry["title"], "created": entry["created"], "reddit_url": entry["reddit_url"]}):
+                    for x in mdb.find({"CVE": record["cve"], "Severity": str(record["cvssv3_base_score"]), "title": entry["title"], "created": entry["created"], "reddit_url": entry["reddit_url"]}):
                         existing_entries.append(x)
                     if len(existing_entries) == 0:
                         try:
