@@ -20,7 +20,7 @@ Jinja2==3.0.3
 Markdown==3.3.6
 MarkupSafe==2.1.1
 packaging==21.3
-pipenv==2018.11.26
+pipenv==2022.1.8
 pluggy==1.0.0
 psutil==5.9.0
 py==1.11.0
