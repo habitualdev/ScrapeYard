@@ -1,8 +1,6 @@
 import json
-import logging
+import requests
 import os
-
-from splunk_hec_handler import SplunkHecHandler
 
 # Splunk Host Information #
 splunk_host = os.environ['SPLUNK_HOST']
@@ -17,14 +15,11 @@ def __init__(*args):
     for arg in args:
         rebuild_string = rebuild_string + arg
     data = json.loads(rebuild_string[1:].replace("'", ""))
-    logger = logging.getLogger('HEC_Handler')
-    logger.setLevel(logging.DEBUG)
-    splunk_handler = SplunkHecHandler(splunk_host, splunk_token, port=splunk_port, proto=splunk_proto, source=data["Module"])
-    logger.addHandler(splunk_handler)
-    logger.log(logging.INFO, data["Data"])
-    logger.removeHandler(splunk_handler)
-
-
-
-
-
+    url = splunk_proto + '://' + splunk_host + ':' + splunk_port + '/services/collector/event'
+    authHeader = {'Authorization': 'Splunk ' + splunk_token}
+    payload = {}
+    payload.update({"sourcetype": "_json"})
+    payload.update({"source": data['Module']})
+    payload.update({"host": "omegon"})
+    payload.update({"event": data['Data']})
+    r = requests.post(url, headers=authHeader, json=payload, verify=False)
