@@ -16,16 +16,24 @@ def get_config():
 
 
 def run_modules(yaml_parsed):
+    thread_list = []
+    for thread in threading.enumerate():
+        thread_list.append(thread.name)
+
     for mod in yaml_parsed["Modules"]["Ingest"]:  # Read the parsed YAML to see what modules should be run.
         try:
             module = importlib.import_module("ingest." + mod)
             try:
                 if not os.path.exists("ingest." + mod + ".lck"):
-                    print("ingest." + mod + " reloaded...")  # Print the module to be loaded to stdout for logging purposes
-                    with open("ingest." + mod + ".lck", "w") as f:  # Drop a lock file for simple inter-thread communication
+                    print("ingest." + mod + " reloaded...")  # Print the module to be loaded to stdout
+                    with open("ingest." + mod + ".lck", "w") as f:  # Drop a lock file for simple checking
                         f.write(datetime.datetime.now().strftime("%H:%M:%S"))  # Write the time loaded to the lock file
-                    thread = threading.Thread(target=module.QueryClass)  # start a separate thread for the module
+                    thread = threading.Thread(target=module.QueryClass, name=mod)  # start a separate thread
                     thread.start()
+                elif os.path.exists("ingest." + mod + ".lck"):
+                    if mod not in thread_list:  # If the module is not running, start it.
+                        thread = threading.Thread(target=module.QueryClass, name=mod)
+                        thread.start()
             except:
                 error_string = "Unable to start the module: " + mod  # To see if QueryClass fails
                 logging.log(logging.ERROR, error_string)

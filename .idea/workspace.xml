@@ -16,9 +16,9 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="Reworked splunk output, now just uses requests">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="cbacc3d3-d5b8-4dac-a2f7-3da13dcf3bd0" name="Changes" comment="Cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +233,8 @@
       <workItem from="1649689972906" duration="3791000" />
       <workItem from="1649852972959" duration="3137000" />
       <workItem from="1649868543474" duration="1602000" />
-      <workItem from="1649870429025" duration="1036000" />
+      <workItem from="1649870429025" duration="2006000" />
+      <workItem from="1650213943160" duration="460000" />
     </task>
     <task id="LOCAL-00001" summary="minor">
       <created>1649709153405</created>
@@ -249,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649871384043</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cleanup">
+      <created>1649871480474</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649871480474</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers>
       <YouTrack url="https://yt.habitual.live">
         <username>random</username>
@@ -286,7 +294,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="minor" />
     <MESSAGE value="Reworked splunk output, now just uses requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked splunk output, now just uses requests" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ScrapeYard$main.coverage" NAME="main Coverage Results" MODIFIED="1646944709426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
