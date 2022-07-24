@@ -37,7 +37,6 @@ def module_test(test_module):
             return False
         thread = threading.Thread(target=module.QueryClass, daemon=True)
         thread.start()
-        time.sleep(1)
         json_data = r.lpop("data")
         if json_data is None:
             f.write("No data returned.")
