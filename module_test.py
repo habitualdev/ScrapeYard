@@ -39,9 +39,9 @@ def module_test(test_module):
         thread.start()
         json_data = r.lpop("data")
         if json_data is None:
-            f.write("No data returned.")
-            print("No data returned.")
-            return False
+            f.write("No data returned. Not a critical Error, may just be a scraping error.")
+            print("No data returned. Not a critical Error, may just be a scraping error.")
+            return True
         else:
             f.write("Data returned/ingested:")
             f.write(" -- " + str(json_data)[1:])
