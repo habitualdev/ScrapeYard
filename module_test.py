@@ -36,6 +36,7 @@ def module_test(test_module):
             print("No QueryClass class to instantiate. \n")
             return False
         thread = threading.Thread(target=module.QueryClass, daemon=True)
+        time.sleep(1)
         thread.start()
         json_data = r.lpop("data")
         if json_data is None:
