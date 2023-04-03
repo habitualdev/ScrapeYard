@@ -31,7 +31,7 @@ pytest==7.1.1
 python-on-whales==0.37.0
 pytz==2022.1
 PyYAML==6.0
-redis==4.5.3
+redis==4.5.4
 redislite==6.0.674960
 requests==2.27.1
 six==1.16.0
